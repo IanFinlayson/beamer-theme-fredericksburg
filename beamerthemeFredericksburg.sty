@@ -1,0 +1,37 @@
+% Fredericksburg Beamer Theme
+% Ian Finlayson
+
+% color and compression are options
+\DeclareOptionBeamer{compress}{\beamer@compresstrue}
+\DeclareOptionBeamer{RGB}{\definecolor{beamer@frederckisburg@color}{RGB}{#1}}
+\ProcessOptionsBeamer
+
+% setup miniframes which is the "outer" theme
+% use author and title in footer and don't include subsections
+\useoutertheme[footline = authortitle, subsection = false]{miniframes}
+
+% setup colors themes to be used
+\usecolortheme{whale}
+\usecolortheme{orchid}
+
+% set the color to be whatever option the user put in for RGB
+\setbeamercolor{structure}{fg=beamer@frederckisburg@color}
+
+% setup inner frame to be rounded (e.g. blocks)
+\useinnertheme{rounded}
+
+% setup font
+\setbeamerfont{block title}{size={}}
+
+% covered things should be invisible (not just faint)
+\setbeamercovered{invisible}
+
+% navigation symbols not needed with miniframes (circles at top)
+\setbeamertemplate{navigation symbols}{}
+
+% make the bullets little balls
+\setbeamertemplate{items}[ball]
+
+% use shadowed rounded blocks
+\setbeamertemplate{blocks}[rounded][shadow = true]
+
